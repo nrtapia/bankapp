@@ -1,8 +1,13 @@
-<div class="card border-secondary mb-3" style="max-width: 18rem;">
+<div class="card border-secondary mb-3 hand" style="width: 18rem;" 
+(click)="select()" [ngClass]="selected ? 'bg-info' : ''">
   <div class="card-body">
-    <h5 class="card-title">Card title</h5>    
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
+    <h5 class="card-title">{{data.fullName}}</h5>    
+    <p class="card-text">      
+      <strong>{{data.city}}</strong><br>
+      Address: {{data.address}}<br>          
+      Phone: {{data.phone}}      
+    </p>
+    
+    <button type="button" class="btn btn-primary  btn-sm ml-1 ">Editar</button>
+    <button type="button" class="btn btn-danger  btn-sm ml-1 "  (click)="delete($event)">Eliminar</button> 
 </div>

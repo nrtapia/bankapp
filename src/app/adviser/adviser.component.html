@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col-lg-12">
+      <h2>Asesores Bancarios <a class="btn icon-btn btn-primary pull-right" href="#">
+        <span class="glyphicon btn-glyphicon glyphicon-plus img-circle"></span> Nuevo Asesor</a>
+      </h2>
+    </div>
+
+    <div class="card border-secondary mb-3 card-inline" style="width: 18rem; margin: 10px" *ngFor="let row of list">
+        <div class="card-body">
+          <h5 class="card-title">{{row.fullName}}</h5>    
+          <p class="card-text">      
+            Especialidad: {{row.speciality}}
+          </p>
+          <button type="button" class="btn btn-primary  btn-sm ml-1 ">Editar</button>
+          <button type="button" class="btn btn-danger  btn-sm ml-1 "  (click)="delete($event)">Eliminar</button>     
+        </div>
+    </div>
+</div>
+

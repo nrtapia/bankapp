@@ -1,3 +1,4 @@
+<h2>Tarjetas</h2>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -7,15 +8,14 @@
     </tr>
   </thead>
   <tbody>
-      <tr>
-          <td>Debit Card</td>
-          <td>*4589</td>
-          <td>775</td>      
-        </tr>
-        <tr>
-            <td>Credit Card</td>
-            <td>*4589</td>
-            <td>775</td>      
-          </tr>
+      <tr *ngFor="let row of list">
+        <td>{{row.cardType}}</td>
+        <td>*{{row.number4}}</td>
+        <td>{{row.ccv}}</td>      
+      </tr>
   </tbody>
 </table>
+
+<div *ngIf="list && list.length == 0" class="alert alert-warning" role="alert">
+    No hay tarjetas registradas
+</div>

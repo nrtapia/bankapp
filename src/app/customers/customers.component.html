@@ -1,4 +1,14 @@
-<app-customer></app-customer>
-<app-customer></app-customer>
-<app-customer></app-customer>
-<app-customer></app-customer>
+<div class="row">
+    <div class="col">
+        <h2>Clientes</h2>        
+        <app-customer *ngFor="let row of list" [data]="row" 
+            (customerSelected)="setSelected($event)" (customerDeleted)="customerDeleted($event)">
+        </app-customer>
+    </div>
+    <div class="col">
+        <app-cards [list]="selected.cards"></app-cards>
+    </div>
+    <div class="col">
+        <app-transactions></app-transactions>
+    </div>
+</div>  
