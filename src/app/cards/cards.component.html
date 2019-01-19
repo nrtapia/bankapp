@@ -10,7 +10,7 @@
   <tbody>
       <tr *ngFor="let row of list">
         <td>{{row.cardType}}</td>
-        <td>*{{row.number4}}</td>
+        <td><span class="pseudolink" (click)="select(row.id)">*{{row.number4}}</span></td>
         <td>{{row.ccv}}</td>      
       </tr>
   </tbody>

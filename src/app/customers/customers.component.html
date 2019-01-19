@@ -6,9 +6,9 @@
         </app-customer>
     </div>
     <div class="col">
-        <app-cards [list]="selected.cards"></app-cards>
+        <app-cards [list]="selected.cards" (cardSelected)="setCardSelected($event)"></app-cards>
     </div>
     <div class="col">
-        <app-transactions></app-transactions>
+        <app-transactions [list]="transactionList"></app-transactions>
     </div>
 </div>  

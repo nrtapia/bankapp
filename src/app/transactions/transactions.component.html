@@ -8,16 +8,11 @@
       </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>2018-01-01</td>
-            <td>Compra Amazon</td>
-            <td>65267,75</td>      
-          </tr>
-          <tr>
-              <td>2018-01-01</td>
-              <td>Compra Amazon</td>
-              <td>65267,75</td>      
-          </tr>
+        <tr *ngFor="let row of list">
+            <td>{{row.date | date : 'yyyy-MM-dd HH:mm:ss'}}</td>
+            <td>{{row.description}}</td>
+            <td><div class="pull-right">{{ row.amount | currency }}</div></td>      
+        </tr>
     </tbody>
   </table>
   

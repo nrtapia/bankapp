@@ -1,6 +1,6 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { CustomerService } from '../customer.service';
-
+import { TransactionService } from '../transaction.service';
 
 @Component({
   selector: 'app-customers',
@@ -10,9 +10,11 @@ import { CustomerService } from '../customer.service';
 export class CustomersComponent implements OnInit {
 
   list:any = [];
+  transactionList:any = [];
+
   @Output() selected = { id: 0};
 
-  constructor(private customerService: CustomerService) { }
+  constructor(private customerService: CustomerService, private transactionService: TransactionService) { }
 
   ngOnInit() {
     this.findAll();
@@ -27,11 +29,19 @@ export class CustomersComponent implements OnInit {
 
   setSelected(customer) {
     this.selected = customer;
+    this.transactionList = [];
   }
 
   customerDeleted(customer){    
     this.list = this.list.filter(obj => obj !== customer);
     this.selected = { id: 0}
+    this.transactionList = [];
+  }
+
+  setCardSelected(cardId){
+    this.transactionService.findByCard(cardId).subscribe((data:{}) =>{
+      this.transactionList = data;  
+    })
   }
 
 }
