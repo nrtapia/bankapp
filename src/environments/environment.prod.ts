@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  APIEndpoint: "https://bank-backend-nt.herokuapp.com"
+  APIEndpoint: "http://localhost:8080"
 };
