@@ -7,7 +7,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall": "ng build --aot --prod"
   },
   "private": true,
   "dependencies": {
@@ -21,6 +22,7 @@
     "@angular/router": "~7.2.0",
     "bootstrap": "^4.2.1",
     "core-js": "^2.5.4",
+    "express": "^4.16.4",
     "font-awesome": "^4.7.0",
     "glyphicons": "^0.2.0",
     "jquery": "^3.3.1",

@@ -8,7 +8,7 @@ import { CustomerService } from '../customer.service';
 })
 export class CustomerComponent implements OnInit {
 
-  defaultValue = {fullName: '', id:0};
+  defaultValue = {fullName: '', id:0, city: '', address: '', phone: '' };
 
   @Input() data = this.defaultValue;
   

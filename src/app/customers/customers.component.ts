@@ -12,7 +12,7 @@ export class CustomersComponent implements OnInit {
   list:any = [];
   transactionList:any = [];
 
-  @Output() selected = { id: 0};
+  @Output() selected = { id: 0, cards: [] };
 
   constructor(private customerService: CustomerService, private transactionService: TransactionService) { }
 
@@ -34,7 +34,7 @@ export class CustomersComponent implements OnInit {
 
   customerDeleted(customer){    
     this.list = this.list.filter(obj => obj !== customer);
-    this.selected = { id: 0}
+    this.selected = { id: 0, cards: [] }
     this.transactionList = [];
   }
 
